@@ -9,12 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Recipe Relay ")
-                .font(.title)
-                .fontWeight(.bold)
+    NavigationView {
+        List(recipes) { recipe in
+            NavigationLink(destination:
+                Text(recipe.instructions)) {
+            VStack(alignment: .leading) {
+                Text(recipe.name)
+                    .font(.headline)
+                Text(recipe.category)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                        }
+                    }
+                }
+                .navigationTitle("Recipe Relay")
         }
-        .padding()
     }
 }
 
