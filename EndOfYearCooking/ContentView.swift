@@ -22,6 +22,8 @@ struct ContentView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
                             }
+                            .background(Color.secondary.opacity(0.1))
+                            .cornerRadius(10)
                         } .buttonStyle(PlainButtonStyle())
                     }
                 }
