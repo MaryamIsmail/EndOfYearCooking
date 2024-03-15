@@ -15,15 +15,8 @@ struct ContentView: View {
                     ForEach(recipes) { recipe in
                         NavigationLink(destination:
                                         Text(recipe.instructions)) {
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text(recipe.name)
-                                    .font(.headline)
-                                Text(recipe.category)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
-                            .background(Color.secondary.opacity(0.1))
-                            .cornerRadius(10)
+                            RecipeCard(recipes: Recipe(name: "Spaghetti Carbonara", ingredients: ["Spaghetti", "Eggs", "Pancetta", "Parmesan cheese", "Black pepper"], instructions: "Cook spaghetti. Fry pancetta. Mix eggs and cheese. Combine all ingredients.", category: "Pasta"))
+                                .padding(10)
                         } .buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -32,6 +25,7 @@ struct ContentView: View {
             .navigationTitle("Recipe Relay")
         }
     }
+    
 }
 
 #Preview {
